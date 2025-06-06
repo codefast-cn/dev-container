@@ -66,7 +66,7 @@
 		"ghcr.io/devcontainers-extra/features/qrcode": {},
 		"ghcr.io/devcontainers-extra/features/protoc:1": {},
 		"ghcr.io/devcontainers-extra/features/neovim-apt-get:1": {},
-		"ghcr.io/devcontainers-extra/features/redis-homebrew:1": {},
+		"ghcr.io/itsmechlark/features/redis-server": {},
 		"ghcr.io/devcontainers-extra/features/tailscale": {},
 		"ghcr.io/devcontainers/features/sshd": {},
 		"ghcr.io/devcontainers-extra/features/etcd:latest": {},
