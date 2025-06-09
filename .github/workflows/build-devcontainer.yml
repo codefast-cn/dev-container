@@ -19,7 +19,7 @@ jobs:
         with:
           imageName: registry.cn-hangzhou.aliyuncs.com/codefast/dev-container
           push: always
-          registry: registry.cn-hangzhou.aliyuncs.com
+          registry: registry.cn-hangzhou.aliyuncs.com/codefast
         env:
           # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DOCKERHUB_USERNAME: iflei
