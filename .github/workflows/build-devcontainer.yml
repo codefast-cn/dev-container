@@ -1,0 +1,26 @@
+name: Build Dev Container
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.devcontainer/**'
+      - '.github/workflows/build-devcontainer.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build and (optionally) push dev container image
+        uses: devcontainers/ci@v0.3
+        with:
+          imageName: ghcr.io/codefast/dev-container
+          push: always
+          registry: ghcr.io
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+          # DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
