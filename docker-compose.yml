@@ -1,0 +1,63 @@
+version: "3.8"
+services:
+  dev-container:
+    image: dev-container
+    container_name: dev-container
+    user: root
+    privileged: true
+    init: true
+    cap_add:
+      - SYS_PTRACE
+    security_opt:
+      - seccomp=unconfined
+      - label=disable
+    environment:
+      - PATH=/usr/local/cargo/bin:/usr/local/python/current/bin:/usr/local/py-utils/bin:/usr/local/jupyter:/usr/local/php/current/bin:/usr/local/sdkman/bin:/usr/local/sdkman/candidates/java/current/bin:/usr/local/sdkman/candidates/gradle/current/bin:/usr/local/sdkman/candidates/maven/current/bin:/usr/local/sdkman/candidates/ant/current/bin:/usr/local/go/bin:/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/vcpkg
+      - VCPKG_ROOT=/usr/local/vcpkg
+      - VCPKG_DOWNLOADS=/usr/local/vcpkg-downloads
+      - DISPLAY=:1
+      - DOCKER_BUILDKIT=1
+      - GOROOT=/usr/local/go
+      - GOPATH=/go
+      - SDKMAN_DIR=/usr/local/sdkman
+      - JAVA_HOME=/usr/local/sdkman/candidates/java/current
+      - PHP_PATH=/usr/local/php/current
+      - PYTHON_PATH=/usr/local/python/current
+      - PIPX_HOME=/usr/local/py-utils
+      - PIPX_BIN_DIR=/usr/local/py-utils/bin
+      - CARGO_HOME=/usr/local/cargo
+      - RUSTUP_HOME=/usr/local/rustup
+    entrypoint: [ "/bin/sh" ]
+    command:
+      - -c
+      - |
+        echo Container started
+        trap "exit 0" 15
+        /usr/local/share/desktop-init.sh
+        /usr/local/share/docker-init.sh
+        /usr/local/share/ssh-init.sh
+        /usr/local/share/redis-server-init.sh
+        exec "$@"
+        while sleep 1 & wait $!; do :; done
+      - "-"
+    volumes:
+      - ~/workspaces:/workspaces
+      - dind-var-lib-docker:/var/lib/docker
+      - dind-var-lib-redis-server:/var/lib/redis-server/data
+      - vscode:/vscode
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "20m"
+        max-file: "5"
+    shm_size: 2608857088
+    restart: "no"
+    network_mode: bridge
+
+volumes:
+  dind-var-lib-docker:
+    external: false
+  dind-var-lib-redis-server:
+    external: false
+  vscode:
+    external: false
