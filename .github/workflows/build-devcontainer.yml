@@ -18,7 +18,7 @@ jobs:
       #   uses: docker/setup-buildx-action@v3
 
       - name: Build and (optionally) push dev container image
-        uses: devcontainers/ci@v0.3.1
+        uses: devcontainers/ci@v0.3
         with:
           imageName: codefastcn/dev-container
           push: always
