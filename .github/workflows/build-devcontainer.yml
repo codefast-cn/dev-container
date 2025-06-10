@@ -18,11 +18,11 @@ jobs:
       #   uses: docker/setup-buildx-action@v3
 
       - name: Build and (optionally) push dev container image
-        uses: devcontainers/ci@v0.3.1900000417
+        uses: devcontainers/ci@v0.3.2
         with:
           imageName: codefastcn/dev-container
           push: always
-          platform: linux/arm64
+          platforms: linux/arm64
         env:
           DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
           DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
