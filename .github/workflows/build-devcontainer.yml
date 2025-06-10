@@ -22,7 +22,7 @@ jobs:
         with:
           imageName: codefastcn/dev-container
           push: always
-          platforms: linux/arm64
+          platform: linux/arm64
         env:
           DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
           DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
