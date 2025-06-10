@@ -23,6 +23,6 @@ jobs:
       - name: Build and push devcontainer image
         uses: devcontainers/ci@v0.3
         with:
-          imageName: ${{ secrets.DOCKERHUB_USERNAME }}/your-image-name
+          imageName: ${{ secrets.DOCKERHUB_USERNAME }}/dev-container
           imageTag: latest
           push: always
