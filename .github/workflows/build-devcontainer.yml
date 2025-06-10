@@ -17,10 +17,10 @@ jobs:
       - name: Build and (optionally) push dev container image
         uses: devcontainers/ci@v0.3
         with:
-          imageName: registry.cn-hangzhou.aliyuncs.com/codefast/dev-container
+          imageName: codefastcn/dev-container
           push: always
-          registry: registry.cn-hangzhou.aliyuncs.com/codefast
+          # registry: docker.io
         env:
           # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DOCKERHUB_USERNAME: iflei
-          DOCKERHUB_TOKEN: Lei123456
+          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+          DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
