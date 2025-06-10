@@ -38,7 +38,7 @@
 			"version": "latest",
 			"jdkDistro": "open",
 			"gradleVersion": "latest",
-			"mavenVersion": "latest",
+			"mavenVersion": "3.8.6",
 			"antVersion": "latest",
 			"groovyVersion": "latest"
 		},
