@@ -9,7 +9,7 @@ on:
 
 jobs:
   build-and-push:
-    runs-on: ubuntu-arm64
+    runs-on: arm64
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
