@@ -5,8 +5,8 @@ FROM mcr.microsoft.com/devcontainers/cpp:1-debian-12
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install curl
 
-COPY ./install-mariadb.sh /tmp/
-RUN chmod +x /tmp/install-mariadb.sh && /tmp/install-mariadb.sh && rm -f /tmp/install-mariadb.sh
+# COPY ./install-mariadb.sh /tmp/
+# RUN chmod +x /tmp/install-mariadb.sh && /tmp/install-mariadb.sh && rm -f /tmp/install-mariadb.sh
 
 ARG REINSTALL_CMAKE_VERSION_FROM_SOURCE="3.22.2"
 
