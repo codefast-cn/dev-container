@@ -34,4 +34,4 @@ jobs:
           imageName: ${{ secrets.DOCKERHUB_USERNAME }}/dev-container
           imageTag: latest
           push: always
-          platform: linux/arm64
+          platform: linux/arm64,linux/amd64
