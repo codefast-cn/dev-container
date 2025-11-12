@@ -5,6 +5,11 @@
 	"build": {
 		"dockerfile": "Dockerfile"
 	},
+    "containerEnv": {
+        "HTTP_PROXY": "http://192.168.2.18:7890",
+        "HTTPS_PROXY": "http://192.168.2.18:7890",
+        "NO_PROXY": "localhost,127.0.0.1,172.16.0.0/12,10.0.0.0/8"
+    },
 	"features": {
 		"ghcr.io/devcontainers/features/docker-in-docker:2": {
 			"moby": true,
