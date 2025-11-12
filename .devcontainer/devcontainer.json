@@ -1,49 +1,18 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/cpp-mariadb
+// README at: https://github.com/devcontainers/templates/tree/main/src/cpp
 {
-	"name": "All In One Development Container",
-	"dockerFile": "Dockerfile",
-	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
-	"forwardPorts": [6080, 5901],
-	"portsAttributes": {
-		"6080": {
-			"label": "web"
-		},
-		"5901": {
-			"label": "vnc"
-		}
+	"name": "C++",
+	"build": {
+		"dockerfile": "Dockerfile"
 	},
-	"runArgs": [],
 	"features": {
 		"ghcr.io/devcontainers/features/docker-in-docker:2": {
 			"moby": true,
-			"azureDnsAutoDetection": true,
-			"installDockerBuildx": true,
 			"installDockerComposeSwitch": true,
 			"version": "latest",
 			"dockerDashComposeVersion": "none"
 		},
-		"ghcr.io/devcontainers/features/github-cli:1": {
-			"installDirectlyFromGitHubRelease": true,
-			"version": "latest"
-		},
 		"ghcr.io/devcontainers/features/go:1": {
-			"version": "latest"
-		},
-		"ghcr.io/devcontainers/features/java:1": {
-			"installGradle": true,
-			"installMaven": true,
-			"installAnt": true,
-			"installGroovy": true,
-			"version": "latest",
-			"jdkDistro": "open",
-			"gradleVersion": "latest",
-			"mavenVersion": "3.8.6",
-			"antVersion": "latest",
-			"groovyVersion": "latest"
-		},
-		"ghcr.io/devcontainers/features/php:1": {
-			"installComposer": true,
 			"version": "latest"
 		},
 		"ghcr.io/devcontainers/features/python:1": {
@@ -55,31 +24,23 @@
 		},
 		"ghcr.io/devcontainers/features/rust:1": {
 			"version": "latest",
-			"profile": "complete",
-			"targets": "aarch64-unknown-linux-gnu"
-		}, 
-		"ghcr.io/devcontainers/features/desktop-lite:latest": {
-			"password": "110614",
-			"webPort": 6080,
-			"vncPort": 5901
+			"profile": "default",
+			"targets": "x86_64-unknown-redox,x86_64-unknown-uefi",
+			"components": "rust-analyzer,rust-src,rustfmt,clippy"
 		},
-		"ghcr.io/devcontainers-extra/features/qrcode": {},
 		"ghcr.io/devcontainers-extra/features/protoc:1": {},
-		"ghcr.io/devcontainers-extra/features/neovim-apt-get:1": {},
-		"ghcr.io/itsmechlark/features/redis-server": {},
-		"ghcr.io/devcontainers-extra/features/tailscale": {},
-		"ghcr.io/devcontainers/features/sshd": {},
-		"ghcr.io/devcontainers-extra/features/etcd:latest": {},
-		"ghcr.io/devcontainers-extra/features/wget-apt-get:1": {},
-		"ghcr.io/devcontainers-extra/features/curl-apt-get": {}
+		"ghcr.io/devcontainers-community/features/bazel:1": {},
+		"ghcr.io/devcontainers-extra/features/tailscale:1": {}
 	}
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// This is the recommended way to access the container from the host
-	// "forwardPorts": [3306],
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "gcc -v",
 
 	// Configure tool-specific properties.
 	// "customizations": {},
