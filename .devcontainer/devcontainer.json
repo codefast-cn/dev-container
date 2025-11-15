@@ -12,7 +12,7 @@
     },
 	"features": {
 		"ghcr.io/devcontainers/features/docker-in-docker:2": {
-			"moby": false,
+			"moby": true,
 			"installDockerComposeSwitch": true,
 			"version": "latest",
 			"dockerDashComposeVersion": "none"
@@ -34,8 +34,7 @@
 			"components": "rust-analyzer,rust-src,rustfmt,clippy"
 		},
 		"ghcr.io/devcontainers-extra/features/protoc:1": {},
-		"ghcr.io/devcontainers-community/features/bazel:1": {},
-		"ghcr.io/devcontainers-extra/features/tailscale:1": {}
+		"ghcr.io/devcontainers-community/features/bazel:1": {}
 	}
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
