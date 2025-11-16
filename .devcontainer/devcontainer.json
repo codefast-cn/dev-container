@@ -5,14 +5,9 @@
 	"build": {
 		"dockerfile": "Dockerfile"
 	},
-    //"containerEnv": {
-    //    "HTTP_PROXY": "http://192.168.2.18:7890",
-    //    "HTTPS_PROXY": "http://192.168.2.18:7890",
-    //    "NO_PROXY": "localhost,127.0.0.1,172.16.0.0/12,10.0.0.0/8"
-    //},
 	"features": {
 		"ghcr.io/devcontainers/features/docker-in-docker:2": {
-			"moby": false,
+			"installDockerBuildx": true,
 			"installDockerComposeSwitch": true,
 			"version": "latest",
 			"dockerDashComposeVersion": "none"
@@ -20,21 +15,22 @@
 		"ghcr.io/devcontainers/features/go:1": {
 			"version": "latest"
 		},
-		//"ghcr.io/devcontainers/features/python:1": {
-		//	"installTools": true,
-		//	"optimize": true,
-		//	"enableShared": true,
-		//	"installJupyterlab": true,
-		//	"version": "latest"
-		//},
+		"ghcr.io/devcontainers/features/php:1": {
+			"installComposer": true,
+			"version": "latest"
+		},
 		"ghcr.io/devcontainers/features/rust:1": {
 			"version": "latest",
 			"profile": "default",
 			"targets": "x86_64-unknown-redox,x86_64-unknown-uefi",
 			"components": "rust-analyzer,rust-src,rustfmt,clippy"
 		},
-		//"ghcr.io/devcontainers-extra/features/protoc:1": {},
-		"ghcr.io/devcontainers-community/features/bazel:1": {}
+		"ghcr.io/devcontainers-extra/features/protoc:1": {
+			"version": "latest"
+		},
+		"ghcr.io/coder/devcontainer-features/code-server:1": {
+			"auth": "password"
+		}
 	}
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
