@@ -28,7 +28,7 @@
 		"ghcr.io/devcontainers-extra/features/protoc:1": {
 			"version": "latest"
 		},
-		"ghcr.io/coder/devcontainer-features/code-server:1": {
+		"ghcr.io/coder/devcontainer-features/code-server:2": {
 			"auth": "password"
 		}
 	}
